@@ -5,7 +5,7 @@ function add(){
 
     let nameVal = name.value.trim();
     let priceVal = price.value.trim();
-    let curPrice = Number(total.innerText);
+    let curPrice = parseInt(total.innerText);
 
 
     curPrice = curPrice + Number(priceVal);
