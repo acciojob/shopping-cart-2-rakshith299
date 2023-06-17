@@ -1,39 +1,54 @@
-function add(){
-    const name = document.getElementById("item-name-input");
-    const price = document.getElementById("item-price-input");
-    let total = document.getElementById("total");
-	let table = document.getElementById("table");
+ const itemNameInput = document.getElementById("item-name-input");
+    const itemPriceInput = document.getElementById("item-price-input");
+    const addButton = document.getElementById("add-button");
+    const cartItems = document.getElementById("cart-items");
+    const grandTotalElement = document.querySelector("[data-ns-test='grandTotal']");
 
-    let nameVal = name.value.trim();
-    let priceVal = price.value.trim();
-    let curPrice = parseInt(total.innerText);
+    // Initialize the grand total
+    let grandTotal = 0;
 
+    // Function to update the grand total in the table
+    function updateGrandTotal() {
+      grandTotalElement.textContent = grandTotal;
+    }
 
-    curPrice = curPrice + Number(priceVal);
-    total.innerText = curPrice;
+    // Event listener for the add button
+    addButton.addEventListener("click", function() {
+      const itemName = itemNameInput.value.trim();
+      const itemPrice = parseFloat(itemPriceInput.value.trim());
 
-    let newrow = document.createElement("tr");
-    newrow.classList.add("row");
+      // Validate input
+      if (itemName === "" || isNaN(itemPrice) || itemPrice <= 0) {
+        alert("Invalid input. Please enter a valid item name and price.");
+        return;
+      }
 
-    let nameCol = document.createElement("td");
-    nameCol.classList.add("col");
-    nameCol.innerText = nameVal;
-    nameCol.setAttribute("data-ns-test", "item-name");
+      // Create a new row in the table for the item
+      const newRow = document.createElement("tr");
 
-    let priceCol = document.createElement("td");   
-    priceCol.classList.add("col");
-    priceCol.innerText = priceVal;
-    priceCol.setAttribute("data-ns-test", "item-price");
+      // Create the table cells for item name and price
+      const itemNameCell = document.createElement("td");
+      const itemPriceCell = document.createElement("td");
 
-    newrow.appendChild(nameCol);
-    newrow.appendChild(priceCol);
+      // Set the text content and data attributes
+      itemNameCell.textContent = itemName;
+      itemNameCell.setAttribute("data-ns-test", "item-name");
 
-  
-    table.appendChild(newrow);
+      itemPriceCell.textContent = itemPrice;
+      itemPriceCell.setAttribute("data-ns-test", "item-price");
 
-    name.value = "";
-    price.value = "";
+      // Append the cells to the row
+      newRow.appendChild(itemNameCell);
+      newRow.appendChild(itemPriceCell);
 
-}
+      // Append the row to the cart items table
+      cartItems.appendChild(newRow);
 
-}
+      // Update the grand total
+      grandTotal += itemPrice;
+      updateGrandTotal();
+
+      // Clear input fields
+      itemNameInput.value = "";
+      itemPriceInput.value = "";
+    });

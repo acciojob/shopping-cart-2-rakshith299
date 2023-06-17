@@ -8,37 +8,34 @@
 
 <body>
 
-	<div class = "cont">  
+	 <h1>Shopping Cart</h1>
+
+  <label for="item-name-input">Item Name:</label><br>
+  <input type="text" id="item-name-input" placeholder="Enter item name"><br>
+
+  <label for="item-price-input">Item Price:</label><br>
+  <input type="number" id="item-price-input" placeholder="Enter item price">
+
+  <br>
 	
-	<div>
-		<label for = "item-name-input">Item Name :</label><br>
-		<input name = "item-name-input" id = "item-name-input" type = "text" class = "input">
-	</div>
-	<div>
-		<label for = "item-price-input">Price :</label><br>
-		<input name = "item-price-input" id = "item-price-input" type = "text" class = "input">
-	</div>
+	<button id="add-button" class = "add">Add</button>
 
-	<div class = "but-cont">
-		<button type = "button" onclick="add()" class = "add">Add</button>
-	</div>
-	
+	<h3 data-ns-test="grandTotal">0</h3>
 
-</div>
-
-	<h3 data-ns-test="grandTotal" id = "total" >0</h3>
-
-
-	<table class = "table" id = "table">
-
-		<tr class = "row"> 
-			<th>Items Name</th>
-			<th>Item Price</th>
-		</tr>
-
-		
-		
-	</table>
+  <table id="cart-table" class = "table">
+    <thead>
+      <tr>
+        <th>Item Name</th>
+        <th>Item Price</th>
+      </tr>
+    </thead>
+    <tbody id="cart-items">
+      <!-- Initially, the table has only one row for the grand total -->
+      <tr>
+       
+      </tr>
+    </tbody>
+  </table>
 
     <script type="text/javascript" src="./script.js">
 </script>
