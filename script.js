@@ -20,9 +20,9 @@ function add(){
     nameCol.setAttribute("data-ns-test", "item-name");
 
     let priceCol = document.createElement("td");   
-    nameCol.classList.add("col");
+    priceCol.classList.add("col");
     priceCol.innerText = priceVal;
-    nameCol.setAttribute("data-ns-test", "item-price");
+    priceCol.setAttribute("data-ns-test", "item-price");
 
     newrow.appendChild(nameCol);
     newrow.appendChild(priceCol);
