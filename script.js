@@ -1,5 +1,5 @@
 //your code here
-function addToTable(){
+function add(){
     const name = document.getElementById("item-name-input");
     const price = document.getElementById("item-price-input");
     let total = document.getElementById("total");
