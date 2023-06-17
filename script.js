@@ -1,11 +1,10 @@
-//your code here
 function add(){
     const name = document.getElementById("item-name-input");
     const price = document.getElementById("item-price-input");
     let total = document.getElementById("total");
 
-    let nameVal = name.value;
-    let priceVal = price.value;
+    let nameVal = name.value.trim();
+    let priceVal = price.value.trim();
     let curPrice = Number(total.innerText);
 
 
@@ -18,16 +17,21 @@ function add(){
     let nameCol = document.createElement("td");
     nameCol.classList.add("col");
     nameCol.innerText = nameVal;
+    nameCol.setAttribute("data-ns-test", "item-name");
 
     let priceCol = document.createElement("td");   
     nameCol.classList.add("col");
     priceCol.innerText = priceVal;
+    nameCol.setAttribute("data-ns-test", "item-price");
 
     newrow.appendChild(nameCol);
     newrow.appendChild(priceCol);
 
     let table = document.getElementById("table");
     table.appendChild(newrow);
+
+    name.value = "";
+    price.value = "";
 
 
 

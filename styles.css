@@ -1,5 +1,3 @@
-
-/* Your CSS Code here. */
 .table{
     background-color: black;
     color: white;
@@ -36,4 +34,5 @@ label{
     color: black;
     border: none;
     border-radius: 10px;
+    margin-bottom: 20px;
 }
