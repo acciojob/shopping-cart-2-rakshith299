@@ -7,7 +7,36 @@
 </head>
 
 <body>
-	<!-- the entire body must be written by student -->
+
+	<div class = "cont">  
+	
+	<div>
+		<label for = "item-name-input">Item Name :</label><br>
+		<input name = "item-name-input" id = "item-name-input" type = "text" class = "input">
+	</div>
+	<div>
+		<label for = "item-price-input">Price :</label><br>
+		<input name = "item-price-input" id = "item-price-input" type = "text" class = "input">
+	</div>
+
+	<div class = "but-cont">
+		<input type = "button" onclick="addToTable()"  value = "Add" class = "add">
+	</div>
+	
+
+</div>
+
+	<h2 data-ns-test="grandTotal" id = "total">0</h2>
+
+	<table class = "table" id = "table">
+
+		<tr class = "row"> 
+			<th data-ns-test="item-name" id = "name" class = "col">Items Name</th>
+			<th data-ns-test="item-price" id = "price" class = "col">Item Price</th>
+		</tr>
+		
+	</table>
+
     <script type="text/javascript" src="./script.js">
 </script>
 

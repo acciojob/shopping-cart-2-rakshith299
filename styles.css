@@ -1,2 +1,39 @@
 
 /* Your CSS Code here. */
+.table{
+    background-color: black;
+    color: white;
+    padding: 10px;
+}
+
+.cont{
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+
+}
+
+label{
+    font-size: 18px;
+    font-weight: 600;
+}
+
+
+.input{
+    width: 250px;
+    height: 20px;
+    padding: 2px;
+    padding-left: 5px;
+    margin-bottom: 25px;
+}
+
+.add{
+    margin-top: 10px;
+    width: 120px;
+    height: 30px;
+    background-color: aqua;
+    color: black;
+    border: none;
+    border-radius: 10px;
+}
