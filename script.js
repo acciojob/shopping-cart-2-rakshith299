@@ -2,6 +2,7 @@ function add(){
     const name = document.getElementById("item-name-input");
     const price = document.getElementById("item-price-input");
     let total = document.getElementById("total");
+	let table = document.getElementById("table");
 
     let nameVal = name.value.trim();
     let priceVal = price.value.trim();
@@ -27,12 +28,12 @@ function add(){
     newrow.appendChild(nameCol);
     newrow.appendChild(priceCol);
 
-    let table = document.getElementById("table");
+  
     table.appendChild(newrow);
 
     name.value = "";
     price.value = "";
 
-
+}
 
 }
